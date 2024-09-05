@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Toggle</title>
+    <style>
+        .menu {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+        }
+
+        .mobile {
+            display: none; /* Initially hide the menu */
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .mobile a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #5f6368;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .mobile a:last-child {
+            border-bottom: none; /* Remove border for the last item */
+        }
+
+        .mobile a:hover {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="menu" id="menu">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+    </svg> 
+    <div class="mobile" id="mobile">
+        <a href="">HOME</a>
+        <a href="">ABOUT</a>
+        <a href="">CONTACT</a>
+        <a href="">SIGN UP</a>
+    </div>
+</div>
+
+<script>
+    // Get the menu element and the mobile menu element
+    const menu = document.getElementById('menu');
+    const mobileMenu = document.getElementById('mobile');
+
+    // Add a click event listener to the menu icon
+    menu.addEventListener('click', function() {
+        // Toggle the display of the mobile menu
+        if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+            mobileMenu.style.display = 'block';
+        } else {
+            mobileMenu.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
